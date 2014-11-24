@@ -3,17 +3,12 @@ package utility;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-
 import mainFlows.USHE_RegMain;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
-
-import appModules.RetailerCreation_Action;
-
 
 public class CommonFunctions {
 		
@@ -21,7 +16,6 @@ public class CommonFunctions {
 	{
             File scrFile = ((TakesScreenshot)USHE_RegMain.driver).getScreenshotAs(OutputType.FILE);
 	        FileUtils.copyFile(scrFile, new File(filePath.concat(scrName)+".png"));
-		  
 	}
 	
 	public static void dateTime(String date){
@@ -70,6 +64,44 @@ public class CommonFunctions {
 		Thread.sleep(5000); 
 	}
 	
+	public static void titleSelect(String title)
+	{
+		int Size=USHE_RegMain.driver.findElements(By.xpath("//div[@id='autocomplete']/ul/li/div/div[contains(text(),'"+title+"')]")).size();
+		for(int j=1;j<Size;j++)
+         {  
+ 	      WebElement titleDropDown=USHE_RegMain.driver.findElement(By.xpath("//div[@id='autocomplete']/ul/li["+j+"]/div/div"));
+ 	         if(titleDropDown.getText().contains(title))
+ 	         {
+ 	        	 titleDropDown.click();
+ 		          break;
+ 	         }
+ 	    }
+	}
+	
 }
-
+	
+	
+//	public static File getScreenshot(String methodName) throws IOException {
+//        File screenshot = null;
+//        // to prevent "browser died" if there are too many issues and screenshots
+//        try {Thread.sleep(3000);} catch (InterruptedException e1) {}
+//        try {
+//                screenshot = File.createTempFile(methodName + "_screenshot"
+//                                + getCurrentDate(), ".png", new File("test-output"));
+//                if (configuration.getDriverMode().equals("remote")) {
+//                        TakesScreenshot augmentedDriver = (TakesScreenshot) new Augmenter()
+//                                        .augment(driver);
+//                        Files.copy(augmentedDriver.getScreenshotAs(OutputType.FILE),
+//                                        screenshot);
+//                } else {
+//                        File scrFile = ((TakesScreenshot) driver)
+//                                        .getScreenshotAs(OutputType.FILE);
+//                        Files.copy(scrFile, screenshot);
+//                }
+//                
+//        }catch(Exception e)
+//        {
+//        	
+//        }
+	//}
 

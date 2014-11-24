@@ -4,9 +4,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import appModules.GenreCreation_Action;
-import appModules.RetailerCreation_Action;
 import utility.Log;
 
 public class Title_OR {
@@ -77,11 +75,7 @@ public class Title_OR {
 	        return element;
 	        
 	    }
-	
-	
-	
-	
-	
+
 	public static WebElement list_Genere(WebDriver driver) {
 		 
         element = driver.findElement(By.id("edit-field-genre-und"));
@@ -146,7 +140,7 @@ public class Title_OR {
       }
 	
 	
-public static WebElement txtbx_streetDate(WebDriver driver) {
+   public static WebElement txtbx_streetDate(WebDriver driver) {
         
        element = driver.findElement(By.xpath(".//*[@id='edit-field-formats-und-0-field-street-date-und-0-value-datepicker-popup-0']"));
                      

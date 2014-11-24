@@ -28,11 +28,7 @@ public class Application_Navigations {
 //	}
 	
 	public static void crtTitle_Navigate(WebDriver driver) throws Exception{
-		
-		
-//		  ApplicationLinks.link_Content(driver).click();
-//		  Thread.sleep(20000);
-//		  driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Content dialog']")));
+
           ApplicationLinks.link_AddContent(driver).click();
           Thread.sleep(20000);
           driver.switchTo().defaultContent();
@@ -182,6 +178,28 @@ public class Application_Navigations {
 	       driver.switchTo().defaultContent();
 	       
 		}
+	
+	public static void navigate_FavTitle(WebDriver driver) throws InterruptedException
+	{
+		driver.navigate().to("http://nbcuushe.qa.publisher7.com/#overlay=admin/content/queues");
+    	Thread.sleep(10000);
+		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Queues Listing dialog']")));
+		ApplicationLinks.edit_favTitle(driver).click();
+		Thread.sleep(20000);
+		driver.switchTo().defaultContent();
+		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Edit Favorite Titles dialog']")));
+	}
+	
+	public static void navigate_RecVideo(WebDriver driver) throws InterruptedException
+	{
+        driver.navigate().to("http://nbcuushe.qa.publisher7.com/#overlay=admin/content/queues");
+	    Thread.sleep(10000);
+		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Queues Listing dialog']")));
+		ApplicationLinks.edit_recVideo(driver).click();
+		Thread.sleep(20000);
+	    driver.switchTo().defaultContent();
+		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Edit Recent Videos dialog']")));
+	}
 	
 	
 }

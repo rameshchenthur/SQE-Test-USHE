@@ -4,10 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-
-import com.thoughtworks.selenium.Selenium;
-import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
-
 import pageObjects.Promo_OR;
 import utility.CommonFunctions;
 import utility.Constant;

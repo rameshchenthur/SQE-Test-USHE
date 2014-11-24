@@ -17,6 +17,8 @@ public class TestCaseNames {
 	public static final String TitleRegresssion_TestCase="TitleRegression_Action";
 	public static final String SocailLink_TestCase="CreateSocialLink_Action";
 	public static final String TitleToVideo_TestCase="TitleToVideo_Action";
+	public static final String FavTitle_TestCase="FavouriteTitle_Action";
+	public static final String RecentVideoTitle_TestCase="RecentVideoTitles_Action";
 		
 	public static final String Flag_Yes = "Yes";
 	public static final String Flag_No = "No";

@@ -301,5 +301,25 @@ static WebElement element = null;
       return element;
      
      }
+  
+  public static WebElement edit_favTitle(WebDriver driver) {
+	     
+	  element = driver.findElement(By.xpath("//*[@id='ctools-button-2']/div[2]/ul/li[1]/a"));
+	   
+	   Log.info("edit for fav title link found");
+
+      return element;
+     
+     }
+  
+  public static WebElement edit_recVideo(WebDriver driver) {
+	     
+	  element = driver.findElement(By.xpath("//*[@id='ctools-button-1']/div[2]/ul/li[1]/a"));
+	   
+	   Log.info("edit for rec video link found");
+
+      return element;
+     
+     }
  
 }

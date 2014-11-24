@@ -10,12 +10,14 @@ import utility.Log;
 import utility.Result_Excel;
 import utility.TestCaseNames;
 import appModules.CreateSocialLink_Action;
+import appModules.FavouriteTitle_Action;
 import appModules.GenreCreation_Action;
 import appModules.LogOut_Action;
 import appModules.MainNavCreation_Action;
 import appModules.PersonCreation_Action;
 import appModules.PromoCreation_Action;
 import appModules.PromoWithTitle_Action;
+import appModules.RecentVideoTitles_Action;
 import appModules.RetailerCreation_Action;
 import appModules.SecNavCreation_Action;
 import appModules.SignIn_Action;
@@ -38,14 +40,14 @@ public class USHE_RegMain {
 				
 				Result_Excel.setExcelFile(Constant.Path_TestData + Constant.File_Result,"Result");
      
-//				driver=new FirefoxDriver();
-//		     	driver.manage().window().maximize();
+				driver=new FirefoxDriver();
+		     	driver.manage().window().maximize();
 //			
 				//calling chrome driver
-			      System.setProperty("webdriver.chrome.driver", "C://Users//ra821463//Desktop//New Auto Jars//chromedriver.exe");
+			      //System.setProperty("webdriver.chrome.driver", "C://Users//ra821463//Desktop//New Auto Jars//chromedriver.exe");
 				
 				//open the chrome
-			    driver = new ChromeDriver();
+			   // driver = new ChromeDriver();
 				Log.startTestCase("Create_Title");
 				
 				//call the url and launching
@@ -76,7 +78,8 @@ public class USHE_RegMain {
 			        	//quit the driver
 			        	   driver.quit();
 			        }
-			        			            		        
+			        
+			            		        			            		        
 			            for(int i=1;i<=Result_Excel.getRowCount();i++)
 			    		{
 			            	
@@ -168,6 +171,18 @@ public class USHE_RegMain {
 			            	if(TestCase.equals(TestCaseNames.TitleToVideo_TestCase) & Flag.equals(TestCaseNames.Flag_Yes))
 			            	{
 			            		TitleToVideo_Action.titleToVideo(driver);
+			            		Result_Excel.setResultData("Pass", i, 2);
+			            	}
+			            	
+			            	if(TestCase.equals(TestCaseNames.FavTitle_TestCase) & Flag.equals(TestCaseNames.Flag_Yes))
+			            	{
+			            		FavouriteTitle_Action.favTitle(driver);
+			            		Result_Excel.setResultData("Pass", i, 2);
+			            	}
+			            	
+			            	if(TestCase.equals(TestCaseNames.RecentVideoTitle_TestCase) & Flag.equals(TestCaseNames.Flag_Yes))
+			            	{
+			            		RecentVideoTitles_Action.recVideoTitle(driver);
 			            		Result_Excel.setResultData("Pass", i, 2);
 			            	}
 			            	
