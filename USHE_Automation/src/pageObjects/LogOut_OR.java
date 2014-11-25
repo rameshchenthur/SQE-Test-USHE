@@ -1,3 +1,5 @@
+/*Handling logout page objects in the application updated on 24-11-2014*/
+
 package pageObjects;
 
 import org.openqa.selenium.By;

@@ -12,11 +12,15 @@ import org.openqa.selenium.WebElement;
 
 public class CommonFunctions {
 		
+	/*handling screen shot taking in the application*/
+	
 	public static void scrShot(String filePath,String scrName) throws IOException
 	{
             File scrFile = ((TakesScreenshot)USHE_RegMain.driver).getScreenshotAs(OutputType.FILE);
 	        FileUtils.copyFile(scrFile, new File(filePath.concat(scrName)+".png"));
 	}
+	
+	/*handling calendar  in the application*/
 	
 	public static void dateTime(String date){
 		WebElement dateWidget = USHE_RegMain.driver.findElement(By.xpath(".//*[@id='ui-datepicker-div']"));
@@ -33,12 +37,15 @@ public class CommonFunctions {
 		} 
 	}
 	
-	public static String extractNumber(){
+	/*handling to get the node number for any content in the application*/
+	
+	public static String extractNodeNumber(){
 		String url=USHE_RegMain.driver.getCurrentUrl();
 		String num=url.replaceAll("[^0-9]", "");
 		String node=num.substring(1);
 		return node;
 	}
+	
 	
 	public static void selRetailer(String retailer){
 	    int retailerSize=USHE_RegMain.driver.findElements(By.xpath("//div[@class='chosen-drop']/ul[@class='chosen-results']/li")).size();
@@ -53,6 +60,7 @@ public class CommonFunctions {
           }
 	}
 	
+	/*handling image upload through autoIT tool in the application*/
 	public static void imgUpload(String imgpath,String autoItpath) throws IOException, InterruptedException{
 		
 		String[] command = new String[]{};
@@ -63,6 +71,8 @@ public class CommonFunctions {
 		Runtime.getRuntime().exec(command);
 		Thread.sleep(5000); 
 	}
+	
+	/*handling title select to any content in the application*/
 	
 	public static void titleSelect(String title)
 	{
@@ -79,29 +89,5 @@ public class CommonFunctions {
 	}
 	
 }
-	
-	
-//	public static File getScreenshot(String methodName) throws IOException {
-//        File screenshot = null;
-//        // to prevent "browser died" if there are too many issues and screenshots
-//        try {Thread.sleep(3000);} catch (InterruptedException e1) {}
-//        try {
-//                screenshot = File.createTempFile(methodName + "_screenshot"
-//                                + getCurrentDate(), ".png", new File("test-output"));
-//                if (configuration.getDriverMode().equals("remote")) {
-//                        TakesScreenshot augmentedDriver = (TakesScreenshot) new Augmenter()
-//                                        .augment(driver);
-//                        Files.copy(augmentedDriver.getScreenshotAs(OutputType.FILE),
-//                                        screenshot);
-//                } else {
-//                        File scrFile = ((TakesScreenshot) driver)
-//                                        .getScreenshotAs(OutputType.FILE);
-//                        Files.copy(scrFile, screenshot);
-//                }
-//                
-//        }catch(Exception e)
-//        {
-//        	
-//        }
-	//}
+
 

@@ -1,3 +1,5 @@
+/*Initializing the constant variables for the application*/
+
 package utility;
 
 public class Constant {

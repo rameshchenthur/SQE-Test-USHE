@@ -1,3 +1,5 @@
+/*handling result excel read/write */
+
 package utility;
 
 import java.io.FileInputStream;
@@ -43,7 +45,7 @@ public class Result_Excel {
      
      
      
-		public static void setResultData(String Result,  int RowNum, int ColNum) throws Exception    {
+	public static void setResultData(String Result,  int RowNum, int ColNum) throws Exception    {
 
             try{
 
@@ -85,7 +87,7 @@ public class Result_Excel {
 		
 		
 		
-		public static String getCellData(int RowNum, int ColNum) throws Exception{
+	public static String getCellData(int RowNum, int ColNum) throws Exception{
 
             try{
 
@@ -102,7 +104,9 @@ public class Result_Excel {
                }
 
      }
-		public static int getRowCount() throws Exception {
+	
+	/* This medthod is to get the rowcount in the excel */
+	public static int getRowCount() throws Exception {
 		      
         	return ExcelWSheet.getLastRowNum();
 }
