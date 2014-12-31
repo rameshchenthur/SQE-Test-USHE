@@ -13,20 +13,17 @@ public class TitleWithBonusandTechinical_Action {
 	
 	public static void TitlewithBonusTechincalinfo(WebDriver driver) throws Exception{
 		
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"Title");
+	ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"Title");
 		
-		for(int i=1;i<=ExcelUtils.getRowCount();i++)
-		{
+	for(int i=1;i<=ExcelUtils.getRowCount();i++)
+	{
 			
-		Application_Navigations.crtTitle_Navigate(driver);
-		
-		Thread.sleep(10000);
-		if(driver.getTitle().contains("Create Title"))
+	Application_Navigations.crtTitle_Navigate(driver);
+	Thread.sleep(10000);
+	if(driver.getTitle().contains("Create Title"))
         {
-		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Create Title dialog']")));
-		
-		String title = ExcelUtils.getCellData(i, 0);
-		Title_OR.txtbx_Title(driver).sendKeys(title);
+	String title = ExcelUtils.getCellData(i, 0);
+	Title_OR.txtbx_Title(driver).sendKeys(title);
 	        
         String Type = ExcelUtils.getCellData(i, 2);
         Select type = new Select(Title_OR.list_Type(driver));
@@ -44,11 +41,8 @@ public class TitleWithBonusandTechinical_Action {
         jse.executeScript("scroll(0, 250)");
         
         CommonFunctions.selRetailer(RetailerCreation_Action.retailerTitle);
-        
-//        Title_OR.list_Retailer(driver).click();
-//		WebDriverWait wait = new WebDriverWait(driver, 50);
-//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(".//*[@id='edit_field_formats_und_0_field_retailers_und_chosen']/div/ul/li[1]"))).click();
-        
+  
+       
         String bonusInfo=ExcelUtils.getCellData(i, 16);
         Title_OR.txtbx_bonusFeature(driver).sendKeys(bonusInfo);
         
@@ -64,11 +58,11 @@ public class TitleWithBonusandTechinical_Action {
         rformat.selectByVisibleText(ReeFormat);
         
         String link = ExcelUtils.getCellData(i, 5);
-		Title_OR.txtbx_Link(driver).sendKeys(link);
+	Title_OR.txtbx_Link(driver).sendKeys(link);
 		
-		jse.executeScript("scroll(1000, 0)");
+	jse.executeScript("scroll(1000, 0)");
 				
-		Title_OR.link_People(driver).click();
+	Title_OR.link_People(driver).click();
 		
         Select tpeople = new Select(Title_OR.list_Person(driver)); 
         tpeople.selectByIndex(1);
@@ -77,7 +71,7 @@ public class TitleWithBonusandTechinical_Action {
         tposition.selectByIndex(1);
         
         String role = ExcelUtils.getCellData(i, 12);
-		Title_OR.txtbx_Role(driver).sendKeys(role);
+	Title_OR.txtbx_Role(driver).sendKeys(role);
 		
 		
         Title_OR.link_Promos(driver).click();
@@ -90,10 +84,9 @@ public class TitleWithBonusandTechinical_Action {
         Title_OR.txtbx_promoName(driver).sendKeys(promoName);
         
         Title_OR.btn_AddingPromo(driver).click();
-        
         Thread.sleep(4000);
 		
-		Title_OR.link_PubOption(driver).click();
+	Title_OR.link_PubOption(driver).click();
                         
         String ModState = ExcelUtils.getCellData(i, 13);
         Select mstate = new Select(Title_OR.list_ModState(driver)); 
@@ -101,26 +94,21 @@ public class TitleWithBonusandTechinical_Action {
         
         String assignTo = ExcelUtils.getCellData(i, 14);
         Title_OR.txtbx_AssignTo(driver).clear();
-		Title_OR.txtbx_AssignTo(driver).sendKeys(assignTo.trim());
+	Title_OR.txtbx_AssignTo(driver).sendKeys(assignTo.trim());
 		
-		String logMsg = ExcelUtils.getCellData(i, 15);
-		Title_OR.txtbx_Logmess(driver).sendKeys(logMsg.trim());
+	String logMsg = ExcelUtils.getCellData(i, 15);
+	Title_OR.txtbx_Logmess(driver).sendKeys(logMsg.trim());
 		
-		Title_OR.btn_Save(driver).click();
+	Title_OR.btn_Save(driver).click();
+	Thread.sleep(20000);
 		
-		Thread.sleep(20000);
-		
-		if(driver.getTitle().contains(title))
+	if(driver.getTitle().contains(title))
 	      {
-           System.out.println("Title "+title+" has been created.");
-           
-           
-          }
-		}
+                   System.out.println("Title "+title+" has been created.");
+              }
+	}
 	
-	  }
+	}
 		
 	}
-
-
 }
