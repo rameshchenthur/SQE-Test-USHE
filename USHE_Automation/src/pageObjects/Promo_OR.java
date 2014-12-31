@@ -13,8 +13,7 @@ public class Promo_OR {
 	
 	static WebElement element = null;
 	public static Logger logger = Logger.getLogger(Promo_OR.class.getName());
-
-
+    
 	public static WebElement btn_existingTitle(WebDriver driver) {
 		 
         element = driver.findElement(By.id("edit-field-associated-title-und-actions-ief-add-existing"));
@@ -75,16 +74,6 @@ public class Promo_OR {
 
         } 
 	
-//	public static WebElement txtbx_imgPath(WebDriver driver) {
-//		 
-//        element = driver.findElement(By.id("edit-upload-upload"));
-//
-//        Log.info("Image Upload text box found");
-//
-//        return element;
-//
-//        }
-	
 	public static WebElement btn_browse(WebDriver driver) {
 		 
         element = driver.findElement(By.id("edit-upload-upload"));
@@ -96,35 +85,35 @@ public class Promo_OR {
         }
 	 
 
-public static WebElement btn_Upload(WebDriver driver) { 
+	public static WebElement btn_Upload(WebDriver driver) { 
     
-    element = driver.findElement(By.id("edit-upload-upload-button"));  
+		element = driver.findElement(By.id("edit-upload-upload-button"));  
 
-    Log.info("Image Upload Button found"); 
+		Log.info("Image Upload Button found"); 
 
-    return element; 
+		return element; 
 
-    }  
+		}  
 
-public static WebElement btn_Next(WebDriver driver) { 
+	public static WebElement btn_Next(WebDriver driver) { 
     
-    element = driver.findElement(By.id("edit-next"));  
+		element = driver.findElement(By.id("edit-next"));  
 
-    Log.info("Image Next Button found"); 
+		Log.info("Image Next Button found"); 
 
-    return element; 
+		return element; 
 
-    }    
+    	}    
 
-public static WebElement btn_imagSave(WebDriver driver) { 
+	public static WebElement btn_imagSave(WebDriver driver) { 
 
-element = driver.findElement(By.id("edit-submit"));  
+		element = driver.findElement(By.id("edit-submit"));  
 
-Log.info("Image Save Button found"); 
+		Log.info("Image Save Button found"); 
 
-return element; 
+		return element; 
 
-} 
+		} 
 
 	public static WebElement list_ModState(WebDriver driver) {
 		 
@@ -158,15 +147,13 @@ return element;
 	
 	public static WebElement btn_Save(WebDriver driver) {
 		 
-	      element = driver.findElement(By.id("edit-submit"));
+	    element = driver.findElement(By.id("edit-submit"));
 			
-		   Log.info("Save button found");
+		Log.info("Save button found");
 
-	        return element;
-	        
-	        }
-		
-	
-	
+	    return element;
+	      
+	    }
+
 }
 
