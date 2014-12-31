@@ -5,6 +5,7 @@ import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
 import utility.Constant;
 import utility.Log;
 import utility.Result_Excel;
@@ -15,6 +16,7 @@ import appModules.GenreCreation_Action;
 import appModules.LogOut_Action;
 import appModules.MainNavCreation_Action;
 import appModules.PersonCreation_Action;
+import appModules.PostCreation_Action;
 import appModules.PromoCreation_Action;
 import appModules.PromoWithTitle_Action;
 import appModules.RecentVideoTitles_Action;
@@ -41,13 +43,8 @@ public class USHE_RegMain {
 				Result_Excel.setExcelFile(Constant.Path_TestData + Constant.File_Result,"Result");
      
 				driver=new FirefoxDriver();
-		     	driver.manage().window().maximize();
-//			
-				//calling chrome driver
-			      //System.setProperty("webdriver.chrome.driver", "C://Users//ra821463//Desktop//New Auto Jars//chromedriver.exe");
-				
-				//open the chrome
-			   // driver = new ChromeDriver();
+		     	        driver.manage().window().maximize();
+
 				Log.startTestCase("Create_Title");
 				
 				//call the url and launching
@@ -99,6 +96,13 @@ public class USHE_RegMain {
 			            		PromoCreation_Action.PromoCreate(driver);
 			            		Result_Excel.setResultData("Pass", i, 2);
 			            	}
+			            	
+			            	if(TestCase.equals(TestCaseNames.PostCreation_TestCase) & Flag.equals(TestCaseNames.Flag_Yes))
+			            	{
+			            		PostCreation_Action.PostCreate(driver);
+			            		Result_Excel.setResultData("Pass", i, 2);
+			            	}
+			            	
 			            	
 			            	if(TestCase.equals(TestCaseNames.Title_TestCase) & Flag.equals(TestCaseNames.Flag_Yes))
 			            	{
