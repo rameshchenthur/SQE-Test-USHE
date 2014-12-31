@@ -2,10 +2,12 @@ package appModules;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import pageObjects.ApplicationLinks;
 import pageObjects.Main_Nav_OR;
 import utility.Constant;
 import utility.ExcelUtils;
+import utility.Log;
 
 public class MainNavCreation_Action {
 	
@@ -21,68 +23,41 @@ public class MainNavCreation_Action {
 		Application_Navigations.crtMainNav_Navigate(driver);
 		
 		Thread.sleep(20000);
-		//if(driver.getTitle().contains("Create MainNavigation"))
 		if(driver.getTitle().contains("Navigation"))
-        {
+                 {
 		
-		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Navigation dialog']")));
-		
-		MainNavigation = ExcelUtils.getCellData(i, 0);
-		Main_Nav_OR.txtbx_MenuLinkTitle(driver).sendKeys(MainNavigation);
+		   MainNavigation = ExcelUtils.getCellData(i, 0);
+		   Main_Nav_OR.txtbx_MenuLinkTitle(driver).sendKeys(MainNavigation);
 		                                      
-        String titlePath = ExcelUtils.getCellData(i, 1);
-        Main_Nav_OR.txtbx_Path(driver).sendKeys(titlePath);
-        
-       // Thread.sleep(20000);
-        
-		Main_Nav_OR.btn_Save(driver).click();
+                   String titlePath = ExcelUtils.getCellData(i, 1);
+                   Main_Nav_OR.txtbx_Path(driver).sendKeys(titlePath);
+     
+                   Main_Nav_OR.btn_Save(driver).click();
+		   Thread.sleep(20000);
 		
-		Thread.sleep(20000);
-		
-		
-		if(driver.findElement(By.cssSelector("body")).getText().contains(MainNavigation)){
-	           
-	          // System.out.println("MainNav "+MainNavigation+" has been created.");
-	                     
-	                     System.out.println("Your configuration has been saved.");
-	           
-	           
-	        }
+		if(driver.findElement(By.cssSelector("body")).getText().contains(MainNavigation))
+		  {
+	            System.out.println("Your configuration has been saved.");
+                  }
+	                   
 	              
-	              Thread.sleep(20000);
-	              
-	              ApplicationLinks.link_CloseWindow(driver).click();
-	              
-	              Thread.sleep(20000);
-	              
-	              
-	              if(driver.findElement(By.cssSelector("body")).getText().contains(MainNavigation)){
-	                     System.out.println(MainNavigation +"link is on this page");
-	                     }
-	              
-	              }
-		
-//		if(driver.getTitle().contains(MainNavigation))
-//	    {
-//           System.out.println("MainNav "+MainNavigation+" has been created.");
-//           
-//           
-//        }
-		
-		//}
-		
+                   ApplicationLinks.link_Home(driver).click();
+                   Thread.sleep(20000);
+               if(driver.findElement(By.cssSelector("body")).getText().contains(MainNavigation))
+                 {
+                    System.out.println(MainNavigation +"link is on this page");
+                 }
 		else
 		{
-			driver.quit();
+			Log.info("Time out");
 		}
-		             
-		
 		}
 		
+	     }
 	}
-
-
-
-
-
 }
+
+
+
+
+
