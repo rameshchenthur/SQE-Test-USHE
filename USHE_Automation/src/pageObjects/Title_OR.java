@@ -133,7 +133,7 @@ public class Title_OR {
 	
 	public static WebElement list_Retailer(WebDriver driver) {
         
-        element = driver.findElement(By.xpath(".//*[@id='edit_field_formats_und_0_field_retailers_und_chosen']/ul"));
+      element = driver.findElement(By.xpath(".//*[@id='edit_field_formats_und_0_field_retailers_und_chosen']/ul"));
                      
       Log.info("Retailer listbox found");
 
@@ -146,9 +146,9 @@ public class Title_OR {
         
        element = driver.findElement(By.xpath(".//*[@id='edit-field-formats-und-0-field-street-date-und-0-value-datepicker-popup-0']"));
                      
-      Log.info("Street Date textbox found");
+       Log.info("Street Date textbox found");
 
-      return element;
+       return element;
 
       }
 
@@ -313,13 +313,13 @@ public class Title_OR {
 	
 	public static WebElement btn_AddExistingPromo(WebDriver driver) {
 		 
-	      element = driver.findElement(By.id("edit-field-promos-und-actions-ief-add-existing"));
+	     element = driver.findElement(By.id("edit-field-promos-und-actions-ief-add-existing"));
 			
-		   Log.info("AddExistingPromo button found");
+		 Log.info("AddExistingPromo button found");
 
-	        return element;
+	     return element;
 	        
-	        }
+	     }
 	
 	public static WebElement txtbx_promoName(WebDriver driver) {
 		 
@@ -333,13 +333,13 @@ public class Title_OR {
 	
 	public static WebElement btn_AddingPromo(WebDriver driver) {
 		 
-	      element = driver.findElement(By.id("edit-field-promos-und-form-actions-ief-reference-save"));
+	    element = driver.findElement(By.id("edit-field-promos-und-form-actions-ief-reference-save"));
 			
-		   Log.info("AddPromo button found");
+		Log.info("AddPromo button found");
 
-	        return element;
+	    return element;
 	        
-	        }
+	    }
 	
 	
 	
@@ -386,14 +386,12 @@ public class Title_OR {
 	
 	public static WebElement btn_Save(WebDriver driver) {
 		 
-	      element = driver.findElement(By.id("edit-submit"));
+	    element = driver.findElement(By.id("edit-submit"));
 			
-		   Log.info("Save button found");
+		Log.info("Save button found");
 
-	        return element;
+	    return element;
 	        
-	        }
-		
-	
-	
+	    }
+
 }
