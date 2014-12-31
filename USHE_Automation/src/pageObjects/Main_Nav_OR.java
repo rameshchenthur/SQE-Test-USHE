@@ -42,8 +42,6 @@ public class Main_Nav_OR {
 
 	        return element;
 	        
-	        }
-		
-	
+		}
 
 }
