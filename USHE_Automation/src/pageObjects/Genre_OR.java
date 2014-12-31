@@ -42,8 +42,5 @@ public class Genre_OR {
 
 	        return element;
 	        
-	        }
-		
-
-
+		}
 }
