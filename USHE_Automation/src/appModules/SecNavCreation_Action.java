@@ -2,10 +2,12 @@ package appModules;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import pageObjects.ApplicationLinks;
 import pageObjects.Sec_Nav_OR;
 import utility.Constant;
 import utility.ExcelUtils;
+import utility.Log;
 
 public class SecNavCreation_Action {
 	
@@ -22,49 +24,32 @@ public class SecNavCreation_Action {
 		
 		Thread.sleep(20000);
 		if(driver.getTitle().contains("Navigation"))
-        {
+                {
 		
-		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Secondary Navigation dialog']")));
+		  driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Secondary Navigation dialog']")));
 		
-		SecondaryNavigation = ExcelUtils.getCellData(i, 0);
-		Sec_Nav_OR.txtbx_MenuLinkTitle(driver).sendKeys(SecondaryNavigation);
+		  SecondaryNavigation = ExcelUtils.getCellData(i, 0);
+		  Sec_Nav_OR.txtbx_MenuLinkTitle(driver).sendKeys(SecondaryNavigation);
 		                                      
-        String titlePath = ExcelUtils.getCellData(i, 1);
-        Sec_Nav_OR.txtbx_Path(driver).sendKeys(titlePath);
+                  String titlePath = ExcelUtils.getCellData(i, 1);
+                  Sec_Nav_OR.txtbx_Path(driver).sendKeys(titlePath);
         
-        //Thread.sleep(20000);
-        
-        Sec_Nav_OR.btn_Save(driver).click();
+                  Sec_Nav_OR.btn_Save(driver).click();
 		
-		Thread.sleep(20000);
+	   	  Thread.sleep(20000);
 		
-		if(driver.findElement(By.cssSelector("body")).getText().contains(SecondaryNavigation))
-        {
-                    
-                  System.out.println("Your configuration has been saved.");
-   
-       }
+		 if(driver.findElement(By.cssSelector("body")).getText().contains(SecondaryNavigation))
+                   {
+                      System.out.println("Your configuration has been saved.");
+                   }
            
-           ApplicationLinks.link_CloseWindow(driver).click();
-           
-           }
-
-		
-		
-		else
-		{
-			driver.quit();
-		}
+             }else{
+			Log.info("Time out");
+		  }
 		             
 		
 		}
 		
 	}
-
-
-
-
-
-
 
 }
