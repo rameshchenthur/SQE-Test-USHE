@@ -11,7 +11,7 @@ import utility.Log;
 
 public class Person_OR {
 	
-	    static WebElement element = null;
+	   static WebElement element = null;
 	   public static Logger logger = Logger.getLogger(Person_OR.class.getName());
 	   
 	   public static WebElement txtbx_PerTitle(WebDriver driver) {
@@ -22,7 +22,7 @@ public class Person_OR {
 
 	         return element;
 
-	    }
+	    	}
 		
 		public static WebElement txtbx_PerDesc(WebDriver driver) {
 			 
@@ -32,7 +32,7 @@ public class Person_OR {
 
 	        return element;
 
-	        }
+			}
 		
 		public static WebElement btn_PerImage(WebDriver driver) {
 			 
@@ -52,7 +52,7 @@ public class Person_OR {
 
 	        return element;
 
-	        }
+			}
 		
 		
 		public static WebElement btn_Upload(WebDriver driver) {
@@ -63,7 +63,7 @@ public class Person_OR {
 
 	        return element;
 
-	        }
+			}
 		
 		public static WebElement btn_Next(WebDriver driver) {
 			 
@@ -73,7 +73,7 @@ public class Person_OR {
 
 	        return element;
 
-	        }
+			}
 		
 		public static WebElement btn_imagSave(WebDriver driver) {
 			 
@@ -126,4 +126,4 @@ public class Person_OR {
 
 	        }
 
-}
+     }
