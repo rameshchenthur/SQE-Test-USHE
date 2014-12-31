@@ -15,23 +15,19 @@ public class PromoCreation_Action {
 	
 	public static void PromoCreate(WebDriver driver) throws Exception{
 				
-			ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"Promo");
+	        ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"Promo");
 		
 		for(int i=1;i<=ExcelUtils.getRowCount();i++)
 		{
-			
-			Application_Navigations.crtPromo_Navigate(driver);
 		
-			Thread.sleep(20000);
+    	          	Application_Navigations.crtPromo_Navigate(driver);
+    		        Thread.sleep(9000);
+
 			if(driver.getTitle().contains("Create Promo"))
 			{
 		
-				driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Create Promo dialog']")));
-		
 				promotitle = ExcelUtils.getCellData(i, 1);
 				Promo_OR.txtbx_pTitle(driver).sendKeys(promotitle);
-		
-       //Image upload starts
 		
 				Promo_OR.btn_Image(driver).click();
 				Thread.sleep(9000);
@@ -42,9 +38,9 @@ public class PromoCreation_Action {
 				Promo_OR.btn_browse(driver).click();
 				Thread.sleep(3000);
 	       
-				String imagepath = ExcelUtils.getCellData(i, 2);
+				String imagName = ExcelUtils.getCellData(i, 2);
 	       
-				CommonFunctions.imgUpload(imagepath, Constant.imageUpcode_Path);
+				CommonFunctions.imgUpload(Constant.images_Path.concat(imagName), Constant.imageUpcode_Path);
  
 				Promo_OR.btn_Upload(driver).click();
 				Thread.sleep(20000);
@@ -59,10 +55,6 @@ public class PromoCreation_Action {
 				Thread.sleep(20000);
                              
 				driver.switchTo().defaultContent();
- 
-				driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Create Promo dialog']")));
-        
-				// Description iFrame starts
        
 				driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Rich Text AreaPress ALT-F10 for toolbar. Press ALT-0 for help']")));
         
@@ -70,9 +62,7 @@ public class PromoCreation_Action {
 				Promo_OR.txtbx_Descrption(driver).sendKeys(promoBody);
         
 				driver.switchTo().defaultContent();
-        
-				driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Create Promo dialog']")));
-      
+     
 				String ModState = ExcelUtils.getCellData(i, 4);
 				Select mstate = new Select(Promo_OR.list_ModState(driver)); 
 				mstate.selectByVisibleText(ModState);
@@ -88,15 +78,13 @@ public class PromoCreation_Action {
 				Thread.sleep(20000);
 		
 				if(driver.getTitle().contains(promotitle))
-		       	{
-		    	   Log.info("Promo "+promotitle+" has been created.");
-    	       	}
-		       CommonFunctions.scrShot(Constant.screenShots_Path, "Prmo");
-            }
-			else
-			{
+		         	{
+		    	           Log.info("Promo "+promotitle+" has been created.");
+    	       	                }
+		                CommonFunctions.scrShot(Constant.screenShots_Path, "Prmo");
+                       }else{
 		           Log.info("Time Out");
-			}
+			 }
 		}		
 		
 	}
