@@ -9,7 +9,10 @@ public class LogOut_Action {
 	
 	public static void SignOut(WebDriver driver) throws Exception{
 		 
-		LogOut_OR.link_LogOut(driver).click();
+		LogOut_OR.link_ProfileName(driver).click();
+		Thread.sleep(1000);
+		LogOut_OR.link_logOut(driver).click();
+		Thread.sleep(1000);
 		
     }
 
