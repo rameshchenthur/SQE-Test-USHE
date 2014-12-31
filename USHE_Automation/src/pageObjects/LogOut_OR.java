@@ -21,5 +21,24 @@ public class LogOut_OR {
         return element;
 
         }
+	
+	public static WebElement link_ProfileName(WebDriver driver) {
+		 
+        element = driver.findElement(By.id("navbar-item--4"));
 
+        Log.info("Profile found");
+
+        return element;
+
+        }
+	
+	public static WebElement link_logOut(WebDriver driver) {
+		 
+        element = driver.findElement(By.linkText("Log out"));
+
+        Log.info("log out success");
+
+        return element;
+
+        }
 }
