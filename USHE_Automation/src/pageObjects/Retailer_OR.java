@@ -32,7 +32,7 @@ public class Retailer_OR {
 		Log.info("Format list box found");
 		
 		return element;
-	}
+	    }
 	
 	public static WebElement txtbx_SearUrl(WebDriver driver) {
 		 
@@ -87,12 +87,11 @@ public class Retailer_OR {
 	
 	public static WebElement btn_Save(WebDriver driver) {
 		 
-	      element = driver.findElement(By.id("edit-submit"));
+	    element = driver.findElement(By.id("edit-submit"));
 			
-		   Log.info("Save button found");
+		Log.info("Save button found");
 
-	        return element;
+	    return element;
 	        
-	        }
-
+	    }
 }
