@@ -3,7 +3,6 @@ package appModules;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pageObjects.ApplicationLinks;
 import pageObjects.Queue_Title_Video_OR;
 import utility.Constant;
 import utility.ExcelUtils;
@@ -38,14 +37,9 @@ public class RecentVideoTitles_Action {
 		    	   
 			}
 			
-			Queue_Title_Video_OR.btn_SaveQueue(driver).click();
-			Thread.sleep(10000);
+			      Queue_Title_Video_OR.btn_SaveQueue(driver).click();
+			      Thread.sleep(10000);
 			
-			driver.switchTo().defaultContent();
-			driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Queues Listing dialog']")));
-	
-			ApplicationLinks.link_CloseWindow(driver).click();
-			driver.switchTo().defaultContent();
 	}
 
 }
