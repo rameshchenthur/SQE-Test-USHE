@@ -17,22 +17,19 @@ public class TitleRegression_Action {
 	
 	public static void TitleCreate(WebDriver driver) throws Exception{
 		
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"Title");
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
+	ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"Title");
+	JavascriptExecutor jse = (JavascriptExecutor)driver;
 		
-		for(int i=1;i<=ExcelUtils.getRowCount();i++)
-		{
+	for(int i=1;i<=ExcelUtils.getRowCount();i++)
+	{
 			
-		  Application_Navigations.crtTitle_Navigate(driver);
-		
-		Thread.sleep(10000);
-		if(driver.getTitle().contains("Create Title"))
-        {
-		
-		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Create Title dialog']")));
-		
-		Title = ExcelUtils.getCellData(i, 0);
-		Title_OR.txtbx_Title(driver).sendKeys(Title);
+	Application_Navigations.crtTitle_Navigate(driver);
+	Thread.sleep(10000);
+	if(driver.getTitle().contains("Create Title"))
+	{
+			
+	Title = ExcelUtils.getCellData(i, 0);
+	Title_OR.txtbx_Title(driver).sendKeys(Title);
 		
         driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Rich Text AreaPress ALT-F10 for toolbar. Press ALT-0 for help']")));
         
@@ -40,9 +37,7 @@ public class TitleRegression_Action {
         Title_OR.txtbx_Descrption(driver).sendKeys(titleBody);
         
         driver.switchTo().defaultContent();
-        
-        driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Create Title dialog']")));
-        
+       
         Title_OR.btn_AddingImage(driver).click();
         Thread.sleep(5000);
         
@@ -62,9 +57,7 @@ public class TitleRegression_Action {
         Thread.sleep(10000);
         
         driver.switchTo().defaultContent();
-        
-        driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Create Title dialog']")));
-       
+     
         String Type = ExcelUtils.getCellData(i, 3);
         Select type = new Select(Title_OR.list_Type(driver));
         type.selectByVisibleText(Type);
@@ -127,11 +120,11 @@ public class TitleRegression_Action {
         rformat.selectByVisibleText(ReeFormat);
         
         String link = ExcelUtils.getCellData(i, 15);
-		Title_OR.txtbx_Link(driver).sendKeys(link);
+	Title_OR.txtbx_Link(driver).sendKeys(link);
 		
-		jse.executeScript("scroll(1000, 0)");
+	jse.executeScript("scroll(1000, 0)");
 		
-		Title_OR.link_People(driver).click();
+	Title_OR.link_People(driver).click();
 		
         Select tpeople = new Select(Title_OR.list_Person(driver)); 
         tpeople.selectByVisibleText(PersonCreation_Action.per_Title);
@@ -141,38 +134,31 @@ public class TitleRegression_Action {
         tposition.selectByVisibleText(position);
         
         String role = ExcelUtils.getCellData(i, 17);
-		Title_OR.txtbx_Role(driver).sendKeys(role);
+	Title_OR.txtbx_Role(driver).sendKeys(role);
  
-		Title_OR.link_PubOption(driver).click();
+	Title_OR.link_PubOption(driver).click();
                         
         String ModState = ExcelUtils.getCellData(i, 18);
         Select mstate = new Select(Title_OR.list_ModState(driver)); 
         mstate.selectByVisibleText(ModState);
         
         String assignTo = ExcelUtils.getCellData(i, 19);
-		Title_OR.txtbx_AssignTo(driver).sendKeys(assignTo);
+	Title_OR.txtbx_AssignTo(driver).sendKeys(assignTo);
 		
-		String logMsg = ExcelUtils.getCellData(i, 20);
-		Title_OR.txtbx_Logmess(driver).sendKeys(logMsg.trim());
+	String logMsg = ExcelUtils.getCellData(i, 20);
+	Title_OR.txtbx_Logmess(driver).sendKeys(logMsg.trim());
 		
-		Title_OR.btn_Save(driver).click();
+	Title_OR.btn_Save(driver).click();
+    	Thread.sleep(20000);
 		
-		driver.switchTo().defaultContent();
-		
-		Thread.sleep(20000);
-		
-		if(driver.getTitle().contains(Title))
+	if(driver.getTitle().contains(Title))
 	     {
-           Log.info("Title "+Title+" has been created.");
-           CommonFunctions.scrShot(Constant.screenShots_Path, "TitleRegression");       
-           
-         }
-		}
-		
-		else
-		{
+                Log.info("Title "+Title+" has been created.");
+               CommonFunctions.scrShot(Constant.screenShots_Path, "TitleRegression");       
+             }
+	}else{
 			Log.info("Time out");
-		}
+	     }
 		             
 		
 	 }
