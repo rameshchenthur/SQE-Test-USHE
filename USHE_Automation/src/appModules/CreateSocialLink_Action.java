@@ -30,9 +30,7 @@ public class CreateSocialLink_Action {
 			Thread.sleep(20000);
 			
 			if(driver.getTitle().contains("Social")){
-				
-				driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Social dialog']")));
-				
+	
 				socialTitle=ExcelUtils.getCellData(i, 0);
 				Social_Link_OR.txtbx_menuLinkTitle(driver).sendKeys(socialTitle);
 				
@@ -63,7 +61,7 @@ public class CreateSocialLink_Action {
 		             CommonFunctions.scrShot(Constant.screenShots_Path, "Social");
 	   	        }
 			    
-			    ApplicationLinks.link_CloseWindow(driver).click();
+			    ApplicationLinks.link_Home(driver).click();
 			    Thread.sleep(10000);
 			    
 			    if(driver.findElement(By.cssSelector("body")).getText().contains(socialTitle) & driver.getTitle().equals("Site-Install"))
