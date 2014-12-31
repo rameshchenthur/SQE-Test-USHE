@@ -1,6 +1,5 @@
 package appModules;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import pageObjects.ApplicationLinks;
@@ -20,9 +19,7 @@ public class TitleToVideo_Action {
 		
 		   ApplicationLinks.link_Edit(driver).click();
 		   Thread.sleep(30000);
-	    
-		   driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[class='overlay-element overlay-active']")));
-		
+	       	
 		   jse.executeScript("scroll(0, 1400)");
          
 		   String vTitle=ExcelUtils.getCellData(i, 0);
@@ -33,9 +30,9 @@ public class TitleToVideo_Action {
 		   
 		   CommonFunctions.titleSelect(vTitle);
 
-    		Thread.sleep(5000);
-		    Video_OR.btn_Save(driver).click();
-		    Thread.sleep(20000);
+    	           Thread.sleep(5000);
+		   Video_OR.btn_Save(driver).click();
+		   Thread.sleep(20000);
 	   }
 	}
 }
