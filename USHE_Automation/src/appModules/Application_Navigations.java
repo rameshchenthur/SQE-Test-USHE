@@ -1,204 +1,165 @@
 
 /*Handling OR for All the navigations of application*/
-
 package appModules;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import pageObjects.ApplicationLinks;
 
 public class Application_Navigations {
 	
-//	public static void crtPerson_Navigate(WebDriver driver) throws Exception{
-//	     
-//		Actions action = new Actions(driver);
-//        action.moveToElement(ApplicationLinks.link_MyWorBench(driver)).click().perform();
-//        action.moveToElement(ApplicationLinks.link_CrtContent(driver)).click().perform();
-//        action.moveToElement(ApplicationLinks.link_CrtPerson(driver)).click().perform();
-//	}
-//
-//	
-//	public static void crtTitle_Navigate(WebDriver driver) throws Exception{
-//	     
-//		Actions action = new Actions(driver);
-//        action.moveToElement(ApplicationLinks.link_MyWorBench(driver)).click().perform();
-//        action.moveToElement(ApplicationLinks.link_CrtContent(driver)).click().perform();
-//        action.moveToElement(ApplicationLinks.link_CrtTitle(driver)).click().perform();
-//	}
-	
-	public static void crtTitle_Navigate(WebDriver driver) throws Exception{
-
-          ApplicationLinks.link_AddContent(driver).click();
-          Thread.sleep(20000);
-          driver.switchTo().defaultContent();
-          driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Add content dialog']")));
-          ApplicationLinks.link_CrtTitle(driver).click();
-          Thread.sleep(40000);
-          driver.switchTo().defaultContent();
-
+	public static void crtTitle_Navigate(WebDriver driver) throws Exception
+	{
+		  ApplicationLinks.link_Menu(driver).click();
+		  Thread.sleep(1000);
+		  ApplicationLinks.link_Content(driver).click();
+		  Thread.sleep(1000);
+          	  ApplicationLinks.link_AddContent(driver).click();
+                  Thread.sleep(20000);
+          	  ApplicationLinks.link_CrtTitle(driver).click();
+                  Thread.sleep(40000);
 	}
 	
-	public static void crtPromo_Navigate(WebDriver driver) throws Exception{
+	public static void crtPromo_Navigate(WebDriver driver) throws Exception
+	{
 		
-//		  ApplicationLinks.link_Content(driver).click();
-//		  Thread.sleep(20000);
-//		  driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Content dialog']")));
-          ApplicationLinks.link_AddContent(driver).click();
-          Thread.sleep(20000);
-          driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Add content dialog']")));
-          ApplicationLinks.link_CrtPromo(driver).click();
-          Thread.sleep(40000);
-          driver.switchTo().defaultContent();
-
+		  ApplicationLinks.link_Menu(driver).click();
+		  Thread.sleep(1000);
+		  ApplicationLinks.link_Content(driver).click();
+		  Thread.sleep(1000);
+                  ApplicationLinks.link_AddContent(driver).click();
+                  Thread.sleep(10000);
+                  ApplicationLinks.link_CrtPromo(driver).click();
+                  Thread.sleep(10000);
 	}
 	
-	public static void crtPerson_Navigate(WebDriver driver) throws Exception{
+	public static void crtPerson_Navigate(WebDriver driver) throws Exception
+	{
 
-           ApplicationLinks.link_AddContent(driver).click();
-           Thread.sleep(20000);
-           driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Add content dialog']")));
-           ApplicationLinks.link_CrtPerson(driver).click();
-           Thread.sleep(40000);
-           driver.switchTo().defaultContent();
-
+		   ApplicationLinks.link_Menu(driver).click();
+		   Thread.sleep(1000);
+		   ApplicationLinks.link_Content(driver).click();
+		   Thread.sleep(1000);
+                   ApplicationLinks.link_AddContent(driver).click();
+                   Thread.sleep(10000);
+                   ApplicationLinks.link_CrtPerson(driver).click();
+                   Thread.sleep(20000);
 	}
 	
-	public static void crtRetailer_Navigate(WebDriver driver) throws Exception{
+	public static void crtRetailer_Navigate(WebDriver driver) throws Exception
+	{
 
-           ApplicationLinks.link_AddContent(driver).click();
-           Thread.sleep(20000);
-           driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Add content dialog']")));
-           ApplicationLinks.link_CrtRetailer(driver).click();
-           Thread.sleep(40000);
-           driver.switchTo().defaultContent();
-
-	}
+		   ApplicationLinks.link_Menu(driver).click();
+		   Thread.sleep(1000);
+		   ApplicationLinks.link_Content(driver).click();
+		   Thread.sleep(1000);
+		   ApplicationLinks.link_AddContent(driver).click();
+                   Thread.sleep(10000);
+                   ApplicationLinks.link_CrtRetailer(driver).click();
+                  Thread.sleep(10000);
+        }
 	
 	public static void crtPost_Navigate(WebDriver driver) throws Exception{
 
-          ApplicationLinks.link_AddContent(driver).click();
-          Thread.sleep(20000);
-          driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Add content dialog']")));
-          ApplicationLinks.link_CrtPost(driver).click();
-          Thread.sleep(40000);
-          driver.switchTo().defaultContent();
+		  ApplicationLinks.link_Menu(driver).click();
+		  Thread.sleep(1000);
+		  ApplicationLinks.link_Content(driver).click();
+		  Thread.sleep(1000);
+		  ApplicationLinks.link_AddContent(driver).click();
+                  Thread.sleep(10000);
+                  ApplicationLinks.link_CrtPost(driver).click();
+                  Thread.sleep(10000);
 
 	}
 	
-                          /*-----------Code for Main Nav. starts here----------------*/
+	public static void crtMainNav_Navigate(WebDriver driver) throws Exception
+	{
+		  ApplicationLinks.link_Menu(driver).click();
+		  Thread.sleep(1000); 
+		  ApplicationLinks.link_Structure(driver).click();
+		  Thread.sleep(20000);
+		  ApplicationLinks.link_Menus(driver).click();
+		  Thread.sleep(20000);
+		  ApplicationLinks.link_AddLink(driver).click();
+		  Thread.sleep(10000);
+     
+	}
+	
 
-	public static void crtMainNav_Navigate(WebDriver driver) throws Exception{
-	     
-       ApplicationLinks.link_Structure(driver).click();
-       Thread.sleep(20000);
-       driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Structure dialog']")));
-       ApplicationLinks.link_Menus(driver).click();
-       Thread.sleep(40000);
-       driver.switchTo().defaultContent();
-       driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Menus dialog']")));
-       Thread.sleep(20000);
-       ApplicationLinks.link_AddLink(driver).click();
-       driver.switchTo().defaultContent();
-       
+	public static void crtSecNav_Navigate(WebDriver driver) throws Exception
+	{
+		  ApplicationLinks.link_Menu(driver).click();
+		  Thread.sleep(1000); 
+		  ApplicationLinks.link_Structure(driver).click();
+	          Thread.sleep(20000);
+	          ApplicationLinks.link_Menus(driver).click();
+	          Thread.sleep(20000);
+	          ApplicationLinks.link_SecNavAddLink(driver).click();
+	          Thread.sleep(10000);
+	          
 	}
-	
-	                   /*-----------Code for Secondary Nav. starts here----------------*/
-	
-	public static void crtSecNav_Navigate(WebDriver driver) throws Exception{
-		
-		   ApplicationLinks.link_Structure(driver).click();
-	       Thread.sleep(20000);
-	       
-	       driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Structure dialog']")));
-	       ApplicationLinks.link_Menus(driver).click();
-	       Thread.sleep(20000);
-	       driver.switchTo().defaultContent();
-	       driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Menus dialog']")));
-	       Thread.sleep(20000);
-	       ApplicationLinks.link_SecNavAddLink(driver).click();
-	       driver.switchTo().defaultContent();
-	     
-		
-	}
-	
-	/*-----------Code for Secondary Nav. ends here----------------*/
-	
-	/*-----------Code for genre. starts here----------------*/
 	
 	public static void crtGenre_Navigation(WebDriver driver) throws Exception{
 		
+		   ApplicationLinks.link_Menu(driver).click();
+		   Thread.sleep(1000);
 		   ApplicationLinks.link_Structure(driver).click();
-	       Thread.sleep(20000);
-	       
-	       driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Structure dialog']")));
-	       ApplicationLinks.link_Taxonomy(driver).click();
-	       Thread.sleep(20000);
-	       driver.switchTo().defaultContent();
-	       
-	       driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Taxonomy dialog']")));
-	       ApplicationLinks.link_AddTermForGenre(driver).click();
-	       Thread.sleep(20000);
-	       driver.switchTo().defaultContent();
-		
+	           Thread.sleep(20000);
+	           ApplicationLinks.link_Taxonomy(driver).click();
+	           Thread.sleep(20000);
+	           ApplicationLinks.link_AddTermForGenre(driver).click();
+	           Thread.sleep(20000);
+	
 	}
 	
-	/*-----------Code for genre. ends here----------------*/
-	
-	
-	public static void video_Navigation(WebDriver driver) throws InterruptedException{
-		
-		ApplicationLinks.link_Content(driver).click();
-		Thread.sleep(20000);
-		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Content dialog']")));
-		ApplicationLinks.link_file(driver).click();
-		Thread.sleep(20000);
-		driver.switchTo().defaultContent();
-		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[class='overlay-element overlay-active']")));
-		ApplicationLinks.link_mpxMedia(driver).click();
-		Thread.sleep(20000);
-		driver.switchTo().defaultContent();
-		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[class='overlay-element overlay-active']")));
-		ApplicationLinks.link_mpxMediaTitle(driver).click();
-		Thread.sleep(10000);
-		driver.switchTo().defaultContent();
+	public static void video_Navigation(WebDriver driver) throws InterruptedException
+	{
+		   ApplicationLinks.link_Menu(driver).click();
+		   Thread.sleep(1000);
+		   ApplicationLinks.link_Content(driver).click();
+		   Thread.sleep(20000);
+		   ApplicationLinks.link_file(driver).click();
+		   Thread.sleep(20000);
+		   ApplicationLinks.link_mpxMedia(driver).click();
+		   Thread.sleep(20000);
+		   ApplicationLinks.link_mpxMediaTitle(driver).click();
+		   Thread.sleep(10000);
 	}
 	
-	public static void crtSocail_Navigate(WebDriver driver) throws Exception{
-	     
-	       ApplicationLinks.link_Structure(driver).click();
-	       Thread.sleep(20000);
-	       driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Structure dialog']")));
-	       ApplicationLinks.link_Menus(driver).click();
-	       Thread.sleep(40000);
-	       driver.switchTo().defaultContent();
-	       driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Menus dialog']")));
-	       Thread.sleep(20000);
-	       ApplicationLinks.link_addSocial(driver).click();
-	       driver.switchTo().defaultContent();
-	       
-		}
+	public static void crtSocail_Navigate(WebDriver driver) throws Exception
+	{
+		   ApplicationLinks.link_Menu(driver).click();
+		   Thread.sleep(1000);
+	           ApplicationLinks.link_Structure(driver).click();
+	           Thread.sleep(20000);
+	           ApplicationLinks.link_Menus(driver).click();
+	           Thread.sleep(20000);
+	           ApplicationLinks.link_addSocial(driver).click();
+	       	       
+	}
 	
 	public static void navigate_FavTitle(WebDriver driver) throws InterruptedException
 	{
-		driver.navigate().to("http://nbcuushe.qa.publisher7.com/#overlay=admin/content/queues");
-    	Thread.sleep(10000);
-		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Queues Listing dialog']")));
-		ApplicationLinks.edit_favTitle(driver).click();
-		Thread.sleep(20000);
-		driver.switchTo().defaultContent();
-		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Edit Favorite Titles dialog']")));
+                   ApplicationLinks.link_Menu(driver).click();
+		   Thread.sleep(1000);
+		   ApplicationLinks.link_Content(driver).click();
+		   Thread.sleep(20000);
+		   ApplicationLinks.link_Queues(driver).click();
+		   Thread.sleep(10000);
+		   ApplicationLinks.edit_favTitle(driver).click();
+		   Thread.sleep(20000);
+		
 	}
 	
 	public static void navigate_RecVideo(WebDriver driver) throws InterruptedException
 	{
-        driver.navigate().to("http://nbcuushe.qa.publisher7.com/#overlay=admin/content/queues");
-	    Thread.sleep(10000);
-		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Queues Listing dialog']")));
-		ApplicationLinks.edit_recVideo(driver).click();
-		Thread.sleep(20000);
-	    driver.switchTo().defaultContent();
-		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Edit Recent Videos dialog']")));
+		   ApplicationLinks.link_Menu(driver).click();
+		   Thread.sleep(1000);
+		   ApplicationLinks.link_Content(driver).click();
+		   Thread.sleep(10000);
+		   ApplicationLinks.link_Queues(driver).click();
+		   Thread.sleep(10000);
+		   ApplicationLinks.edit_recVideo(driver).click();
+		   Thread.sleep(10000);
+	   
 	}
 	
 	
