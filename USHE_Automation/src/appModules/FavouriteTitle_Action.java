@@ -41,12 +41,9 @@ public class FavouriteTitle_Action {
 			
 			Queue_Title_Video_OR.btn_SaveQueue(driver).click();
 			Thread.sleep(10000);
-			
-			driver.switchTo().defaultContent();
-			driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Queues Listing dialog']")));
 	
-			ApplicationLinks.link_CloseWindow(driver).click();
-			driver.switchTo().defaultContent();
+			ApplicationLinks.link_Home(driver).click();
+			Thread.sleep(10000);
 			
 			for(int k=0;k<=ExcelUtils.getRowCount();k++)
 			{
