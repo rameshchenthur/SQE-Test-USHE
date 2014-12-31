@@ -26,23 +26,23 @@ public class Queue_Title_Video_OR {
 	
 	public static WebElement btn_titleAddMore(WebDriver driver) {
 		 
-	      element = driver.findElement(By.name("field_qt_titles_add_more"));
+	    element = driver.findElement(By.name("field_qt_titles_add_more"));
 			
-		   Log.info("Addmore for title button found");
+		Log.info("Addmore for title button found");
 
-	        return element;
+	    return element;
 	        
-	        }
+	    }
 	
 	public static WebElement btn_videoAddMore(WebDriver driver) {
 		 
-	      element = driver.findElement(By.name("field_qt_videos_add_more"));
+	    element = driver.findElement(By.name("field_qt_videos_add_more"));
 			
-		   Log.info("Addmore for video button found");
+		Log.info("Addmore for video button found");
 
-	        return element;
+	    return element;
 	        
-	        }
+	    }
 	
 	public static WebElement list_ModStat(WebDriver driver) {
 		 
@@ -76,12 +76,12 @@ public class Queue_Title_Video_OR {
 	
 	public static WebElement btn_SaveQueue(WebDriver driver) {
 		 
-	      element = driver.findElement(By.id("edit-submit"));
+	    element = driver.findElement(By.id("edit-submit"));
 			
-		   Log.info("Save button found");
+	    Log.info("Save button found");
 
-	        return element;
+	    return element;
 	        
-	        }
+	    }
 
 }
