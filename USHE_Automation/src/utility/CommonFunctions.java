@@ -41,8 +41,8 @@ public class CommonFunctions {
 	
 	public static String extractNodeNumber(){
 		String url=USHE_RegMain.driver.getCurrentUrl();
-		String num=url.replaceAll("[^0-9]", "");
-		String node=num.substring(1);
+		String finalString= url.substring(0,url.indexOf("/edit"));
+		String node=finalString.substring(finalString.lastIndexOf('/')+1);
 		return node;
 	}
 	
